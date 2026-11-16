@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launch Radar — pre-token protocols ranked by implied launch value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <span class="logo">◉</span>
+    <h1>Launch Radar</h1>
+    <span id="tagline" class="tagline"></span>
+  </div>
+  <nav class="views" aria-label="Views">
+    <button id="nav-board" class="viewbtn active" data-view="board">Board</button>
+    <button id="nav-live" class="viewbtn" data-view="live">Live tokens</button>
+    <button id="nav-model" class="viewbtn" data-view="model">Model</button>
+  </nav>
+</header>
+
+<section id="controls" aria-label="Filters">
+  <input id="search" type="search" placeholder="Filter by name, slug, category or chain…" autocomplete="off" aria-label="Filter rows">
+  <div class="chips">
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="watchlist">Watchlist</button>
+    <button class="chip" data-filter="early">Below floor</button>
+    <button class="chip" data-filter="young">Younger than 1y</button>
+    <button class="chip" data-filter="momentum">7d momentum +</button>
+  </div>
+  <div class="sorts" aria-label="Sort">
+    <label for="sort">Sort</label>
+    <select id="sort">
+      <option value="implied">Implied value</option>
+      <option value="tvl">TVL</option>
+      <option value="momentum">7d change</option>
+      <option value="age">Age (young first)</option>
+      <option value="name">Name</option>
+    </select>
+  </div>
+  <span id="count" class="count"></span>
+</section>
+
+<main id="board" class="view" tabindex="-1" aria-busy="true">
+  <div class="thead" role="row">
+    <span>#</span><span>Protocol</span><span>Category</span><span class="num">TVL</span>
+    <span class="num">7d</span><span class="num">Age</span><span class="num">Implied value</span>
+  </div>
+  <ol id="rows"></ol>
+</main>
+
+<main id="live" class="view" hidden>
+  <h2>Already trading — the market's own prices</h2>
+  <p class="muted">Protocols in the snapshot whose token trades today. Kept off the ranked board: their value is the market's, not the model's.</p>
+  <div class="thead live" role="row">
+    <span>Protocol</span><span>Category</span><span class="num">MCap</span><span class="num">TVL</span><span class="num">MCap/TVL</span><span class="num">7d</span>
+  </div>
+  <ol id="live-rows"></ol>
+</main>
+
+<main id="model" class="view" hidden>
+  <h2>The model, stated</h2>
+  <div id="model-body"></div>
+</main>
+
+<section id="detail" hidden aria-label="Protocol detail">
+  <button id="detail-close" class="close" aria-label="Back to the board">← Back to the board</button>
+  <div id="detail-body"></div>
+</section>
+
+<footer id="foot">
+  <span id="foot-note"></span>
+  <span class="disclaimer">Implied launch value is this entry's own model, not a prediction and not advice.</span>
+</footer>
+
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
