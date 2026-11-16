@@ -102,9 +102,7 @@ function farmPlan(row) {
 /* ---------- state ---------- */
 
 const state = { query: '', filter: 'all', sort: 'implied', view: 'board' };
-const WATCH = new Set(RADAR.rows.filter((r) => r.rank > 0).map((r) => r.slug));
 
-/** Watchlist membership, read off the dataset: rows the model ranked from the watchlist carry `wl`. */
 function isWatchlist(row) { return row.watchlist === true; }
 
 function matches(row) {
