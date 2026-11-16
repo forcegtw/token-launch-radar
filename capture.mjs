@@ -43,7 +43,7 @@ const server = createServer((req, res) => {
 
 function capture(url, out) {
   return new Promise((resP, rejP) => {
-    const args = ['--headless', '--no-sandbox', '--disable-gpu', '--window-size=1280,720', '--hide-scrollbars', '--virtual-time-budget=6000', `--screenshot=${out}`, url];
+    const args = ['--headless', '--no-sandbox', '--disable-gpu', '--window-size=1440,810', '--force-device-scale-factor=1', '--hide-scrollbars', '--virtual-time-budget=6000', `--screenshot=${out}`, url];
     const c = spawn(chrome, args, { stdio: ['ignore', 'pipe', 'pipe'] });
     let err = '';
     c.stderr.on('data', (d) => { err += d; });
