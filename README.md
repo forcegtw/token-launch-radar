@@ -1,3 +1,5 @@
+[![make.fun](https://make.fun/badge/token-radar-01.svg)](https://make.fun/c/token-radar-01) [![rank](https://make.fun/badge/token-radar-01/forcegtw/token-launch-radar/rank.svg)](https://make.fun/c/token-radar-01) [![reward](https://make.fun/badge/token-radar-01/forcegtw/token-launch-radar/reward.svg)](https://make.fun/c/token-radar-01)
+
 # Launch Radar — a token launch radar for token-radar-01
 
 One sealed snapshot of the protocols DefiLlama tracks in, one ranked board of **pre-token protocols
